@@ -1,7 +1,6 @@
-// Using Promises
 document.getElementById('get-weather').addEventListener('click', function() {
     const city = document.getElementById('city').value;
-    const apiKey = '4ae30886b917e521bbffb14b05042611'; // Replace with your actual API key
+    const apiKey = '4ae30886b917e521bbffb14b05042611'; 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
     fetch(url)
@@ -18,9 +17,8 @@ document.getElementById('get-weather').addEventListener('click', function() {
         .catch(error => console.error('Error:', error));
 });
 
-// Using async/await
 async function getWeather(city) {
-    const apiKey = '4ae30886b917e521bbffb14b05042611'; // Replace with your actual API key
+    const apiKey = '4ae30886b917e521bbffb14b05042611'; 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     try {
         const response = await fetch(url);
@@ -33,11 +31,11 @@ async function getWeather(city) {
             <p>Weather: ${data.weather[0].description}</p>
         `;
     } catch (error) {
-        console.error('Error:', error);
+        console.error('Error:', error); 
     }
 }
 
 document.getElementById('get-weather').addEventListener('click', function() {
     const city = document.getElementById('city').value;
     getWeather(city);
-});
+}); 
